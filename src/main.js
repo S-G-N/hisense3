@@ -12,6 +12,10 @@ import drama from 'components/epg/dramaPanel/dramaPanel';
 import login from 'components/user/login/login';
 import register from 'components/user/register/register';
 import account from 'components/user/account/account';
+// account
+import baseInfo from 'components/user/baseInfo/baseInfo';
+import watchHistory from 'components/user/watchHistory/watchHistory';
+import servicePlan from 'components/user/servicePlan/servicePlan';
 
 // 引入需要打包的外部样式
 import 'common/stylus/index.styl';
@@ -57,39 +61,31 @@ Vue.use(VueResource);
 // ];
 const routes = [
 
-    {
-        path: '/epg',
-        component: epg,
-        children:[
+
             {path: '/epg/launcher', component: launcher},
             {path: '/epg/live', component: live},
             {path: '/epg/movie', component: movie},
             {path: '/epg/variety', component: variety},
-            {path: '/epg/drama', component: drama}
-        ]
-    },
-    {
-        path: '/user',
-        component: user,
-        children:[
+            {path: '/epg/drama', component: drama},
+
             {path: '/user/login', component: login},
             {path: '/user/register', component: register},
             {
                 path: '/user/account',
                 component: account,
                 children:[
-                    {path: '/user/account/login', component: login},
-                    {path: '/user/account/register', component: register},
-                    {path: '/user/account/register', component: register}
+                    {path: '/user/account/baseInfo', component: baseInfo},
+                    {path: '/user/account/watchHistory', component: watchHistory},
+                    {path: '/user/account/servicePlan', component: servicePlan}
                 ]
             }
-        ]
-    }
+
+
 ]
 // 3. 创建 router 实例，然后传 `routes` 配置
 // 你还可以传别的配置参数, 不过先这么简单着吧。
 const router = new VueRouter({
-    mode: 'abstract',
+    mode: 'history',
     base: __dirname,
     linkActiveClass: 'active',
     routes // （缩写）相当于 routes: routes
@@ -105,3 +101,4 @@ const app = new Vue({
 }).$mount('#app');
 
 router.push('/epg/launcher');
+// router.push('/user/account/baseInfo');

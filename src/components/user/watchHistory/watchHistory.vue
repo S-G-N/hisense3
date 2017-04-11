@@ -1,5 +1,6 @@
 <template>
     <div class="app">
+        观看记录
     </div>
 </template>
 <script type="text/ecmascript-6">

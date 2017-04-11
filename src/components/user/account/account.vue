@@ -4,20 +4,18 @@
             <div class="DFicon- icon-logo "></div>
         </div>
         <div class="accountTab">
-            <div class="tabItem"><router-link to="/user/baseIndo">基本信息</router-link></div>
-            <div class="tabItem"><router-link to="/user/watchHistory">观看记录</router-link></div>
-            <div class="tabItem"><router-link to="/user/servicePlan">服务套餐</router-link></div>
+            <div class="tabItem"><router-link to="/user/account/baseInfo">基本信息</router-link></div>
+            <div class="tabItem"><router-link to="/user/account/watchHistory">观看记录</router-link></div>
+            <div class="tabItem"><router-link to="/user/account/servicePlan">服务套餐</router-link></div>
         </div>
-
+        <!--account 路由-->
+        <router-view class="content"></router-view>
     </div>
 </template>
 <script type="text/ecmascript-6">
-    import baseInfo from 'components/user/baseInfo/baseInfo';
-
     export default {
-        components: {
-            'v-baseInfo': baseInfo
-        }
+//        components: {
+//        }
     };
 </script>
 
@@ -61,6 +59,15 @@
             border-radius: 0.7rem
             text-shadow: 1px 6px 11px rgba(0, 0, 0, 1)
             splitLine()
-
+    .content
+        display: block
+        position: fixed
+        bottom: 0rem
+        right: 0rem
+        width: 47.7rem;
+        height: 28.98rem;
+        background: #9da0a4
+        background-size:cover
+        overflow: hidden
 
 </style>

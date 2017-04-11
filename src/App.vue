@@ -1,7 +1,7 @@
 <template>
     <div>
         <v-header class="header"></v-header>
-        <div class="tab border-1px">
+        <div class="tab">
             <div class="tab">
                 <router-link to="/epg/launcher">首页</router-link>
                 <router-link to="/epg/live">直播</router-link>
@@ -12,7 +12,9 @@
         </div>
         <!-- 路由出口 -->
         <!-- 路由匹配到的组件将渲染在这里 -->
-        <router-view></router-view>
+        <router-view>
+
+        </router-view>
     </div>
 </template>
 

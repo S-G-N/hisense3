@@ -1,5 +1,6 @@
 <template>
     <div class="app">
+        服务套餐
     </div>
 </template>
 <script type="text/ecmascript-6">
